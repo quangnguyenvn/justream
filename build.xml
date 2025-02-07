@@ -1,0 +1,26 @@
+<project name="justream" basedir="." default="main">
+    <property name="src.list" value="./"/>
+    <property name="build.dir"       value="${project.basedir}/../build"/>
+    <property name="jar.dir"         value="/octech/lib/java/3rd"/>
+    <path id="classpath">
+    	<fileset dir="${jar.dir}" includes="*.jar"/>
+    </path>
+    
+    <target name="compile">
+        <mkdir dir="${build.dir}"/>
+        <javac srcdir="${src.list}" destdir="${build.dir}" classpathref="classpath" debug="true" debuglevel="lines,source" 
+		includeantruntime="false">
+		<compilerarg value="-Xlint" />
+	</javac>
+    </target>
+
+    <target name="jar">
+        <mkdir dir="${jar.dir}"/>
+        <jar destfile="${jar.dir}/${ant.project.name}.jar" basedir="${build.dir}"/>
+    </target>
+    
+    <target name="clean">
+    	<delete dir="${build.dir}"/>
+    </target>
+    <target name="main" depends="compile,jar,clean"/>
+</project>
