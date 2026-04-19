@@ -1,7 +1,10 @@
+<p align="center">
+  <img src="assets/justream-icon.svg" alt="justream icon" width="102" />
+</p>
+
 # justream
 
-`justream` is a low-level Java library for building HTTP/WebSocket servers for real-time streaming workloads.  
-<img src="assets/justream-icon.svg" alt="justream icon" width="102" />
+`justream` is a low-level Java library for building HTTP/WebSocket servers for real-time streaming workloads.
 
 Unlike full-stack frameworks, `justream` gives you deep control over I/O flow, thread model, queueing, buffering, TLS handling, and endpoint routing behavior.
 
